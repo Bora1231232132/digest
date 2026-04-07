@@ -1,19 +1,69 @@
 # 🧠 My Daily Digests
 
-## 📑 Digest: www.geeksforgeeks.org/python/python-web-development-django/
+## 📑 Digest: www.geeksforgeeks.org/
 
-[Read Original Source](https://www.geeksforgeeks.org/python/python-web-development-django/)
+[Read Original Source](https://www.geeksforgeeks.org/)
 
-- Django is a "batteries-included" Python web framework for rapid development, known for its excellent documentation, scalability, and adoption by major companies, leveraging Python's extensive libraries.
-- It follows an MVT (Model-View-Template) architecture:
-  - **Model:** Manages data logic and database interaction.
-  - **View:** Handles user interface presentation.
-  - **Template:** Defines static HTML with dynamic content.
-- Setting up a Django project involves creating a virtual environment, installing Django via pip, starting a project and running the server using `manage.py`.
-- Key project files include `manage.py` (CLI), `settings.py` (configuration), `urls.py` (URL routing), and `wsgi.py` (web server interface).
-- Django uses an app structure, where apps are reusable, independent modules for specific functionalities, created with `startapp` and registered in `settings.py`.
-- Views are Python functions or classes that process web requests and return responses, categorized into Function-Based (often for CRUD operations) and Class-Based (offering structured code and reusability).
-- URL patterns in `urls.py` map incoming URLs to specific view functions, with the ability to include URL configurations from individual apps.
-- Django Models simplify database interaction through an Object-Relational Mapper (ORM), defining database tables and fields as Python classes. Changes to models require running `makemigrations` and `migrate` commands to update the database schema.
+**Summary:**
+
+This educational platform offers comprehensive courses across multiple domains:
+
+- **Core Categories:** Programming (C, C++, Java, Python, JavaScript), Data Science, Machine Learning, AI, System Design, DevOps, Web Development, Databases, and Interview Preparation
+- **Learning Levels:** Content ranges from beginner to advanced, including both live and self-paced formats
+- **Featured Courses:**
+  - Tech Interview 101 (DSA & System Design) – 4.9 rating, 416k+ students
+  - Java Backend Development with AI – 4.6 rating, 410k+ students
+  - Generative AI Training Program – 5.0 rating, 52k+ students
+  - DevOps Engineering with AI – 4.7 rating, 164k+ students
+  - C++ and Java Programming (Self-paced) – 4.6-4.7 ratings
+- **Additional Features:** Coding contests, tutorials, practice problems, and advertising opportunities
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/bitwise-operators-1597314674--135255/1
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/input-in-python/1&selectedLang=python3
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/int-str--164410/1
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/int-str--164410/1&selectedLang=python3
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/last-digit-of-a-number--145429/1
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/print-in-python/1&selectedLang=python3
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/sum-of-n-number--123033/1
+
+_Failed to extract or summarize._
+
+---
+
+## 📑 Failed Digest: https://www.geeksforgeeks.org//problems/swap-the-numbers--150024/1
+
+_Failed to extract or summarize._
 
 ---

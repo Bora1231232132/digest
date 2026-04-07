@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from google import genai
+from openai import OpenAI
 import trafilatura
 import os
 
@@ -33,11 +33,15 @@ def extract_text(url):
         return f"Error extracting text: {e}"
 
 def summarize_text(text):
-    print("Generating digest...")
+    print("Generating digest with local AI...")
     try:
-        client = genai.Client()
+        # Pointing strictly to your local server
+        client = OpenAI(
+            base_url="http://127.0.0.1:8080/v1", 
+            api_key="not-needed"                 
+        )
         
-        prompt = f"""
+        system_prompt = """
         Role: You are an expert editor and summarizer. 
         
         Task: Condense the provided content into a clear, concise summary that captures the key points.
@@ -56,20 +60,22 @@ def summarize_text(text):
         * Maintain helpful formatting (use bullet points for multiple distinct ideas).
         
         Output Constraint: Output ONLY the summary. Do not include introductory phrases like "Here is the summary" or "In this text."
-        
-        Text to summarize:
-        <selection>
-        {text[:15000]}
-        </selection>
         """
         
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt
+        # We cap at 8000 chars for local model memory stability
+        user_prompt = f"Text to summarize:\n<selection>\n{text[:8000]}\n</selection>"
+        
+        response = client.chat.completions.create(
+            model="local-model",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0.3
         )
-        return response.text
+        return response.choices[0].message.content
     except Exception as e:
-        return f"Error generating summary: {e}"
+        return f"Error communicating with local AI: {e}\n(Make sure your local AI server is running on port 8080!)"
 
 # --- Execution Block ---
 if __name__ == "__main__":
