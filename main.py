@@ -1,23 +1,34 @@
 import requests
 from bs4 import BeautifulSoup
 from google import genai
+import trafilatura
 import os
 
 def extract_text(url):
     print(f"Fetching URL: {url}...")
     try:
-        # Pretend to be a standard browser to avoid basic bot-blockers
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        response = requests.get(url, headers=headers, timeout=10)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+            'Accept-Language': 'en-US,en;q=0.9',
+        }
+
+        # Primary: trafilatura handles complex sites (JS-heavy, ad-heavy, GFG, etc.)
+        downloaded = trafilatura.fetch_url(url)
+        if downloaded:
+            text = trafilatura.extract(downloaded, include_tables=True, include_links=False)
+            if text and len(text.strip()) > 100:
+                return text.strip()
+
+        # Fallback: BeautifulSoup with broader tag selection
+        response = requests.get(url, headers=headers, timeout=15)
         response.raise_for_status()
-        
         soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Extract text only from paragraph tags
-        paragraphs = soup.find_all('p')
-        text = ' '.join([p.get_text() for p in paragraphs])
-        
+        for tag in soup(['script', 'style', 'nav', 'footer', 'header', 'aside']):
+            tag.decompose()
+        tags = soup.find_all(['p', 'h1', 'h2', 'h3', 'h4', 'li'])
+        text = ' '.join([t.get_text(separator=' ') for t in tags])
         return text.strip()
+
     except Exception as e:
         return f"Error extracting text: {e}"
 

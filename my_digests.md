@@ -1,16 +1,19 @@
 # 🧠 My Daily Digests
 
-## 📑 Digest: www.geeksforgeeks.org/python/python-programming-language-tutorial/
+## 📑 Digest: www.geeksforgeeks.org/python/python-web-development-django/
 
-[Read Original Source](https://www.geeksforgeeks.org/python/python-programming-language-tutorial/)
+[Read Original Source](https://www.geeksforgeeks.org/python/python-web-development-django/)
 
-This Python tutorial covers the language's popularity, simplicity, and extensive features, updated for Python 3.13.1. It systematically explores:
-
-- **Fundamentals**: Installation, basic program writing, comments, variables, keywords, operators, and data types including lists, strings, tuples, sets, dictionaries, arrays, and the `collections` module.
-- **Advanced Concepts**: Python function syntax, parameter handling, return values, variable scope, specific functions like `range()`, `map`, `filter`, and `lambda` functions.
-- **Object-Oriented Programming (OOP)**: Principles such as encapsulation, inheritance, polymorphism, abstract classes, and iterators.
-- **Error & Data Management**: Exception handling, file operations (reading/writing), and integration with MySQL and MongoDB databases.
-- **Libraries & Frameworks**: An overview of Python's vast package ecosystem, categorized for data science (foundational, visualization, machine learning, deep learning) and web development (backend frameworks, database integration, API development).
-- **Learning Support**: Python quiz pages and coding practice problems covering a wide range of topics.
+- Django is a "batteries-included" Python web framework for rapid development, known for its excellent documentation, scalability, and adoption by major companies, leveraging Python's extensive libraries.
+- It follows an MVT (Model-View-Template) architecture:
+  - **Model:** Manages data logic and database interaction.
+  - **View:** Handles user interface presentation.
+  - **Template:** Defines static HTML with dynamic content.
+- Setting up a Django project involves creating a virtual environment, installing Django via pip, starting a project and running the server using `manage.py`.
+- Key project files include `manage.py` (CLI), `settings.py` (configuration), `urls.py` (URL routing), and `wsgi.py` (web server interface).
+- Django uses an app structure, where apps are reusable, independent modules for specific functionalities, created with `startapp` and registered in `settings.py`.
+- Views are Python functions or classes that process web requests and return responses, categorized into Function-Based (often for CRUD operations) and Class-Based (offering structured code and reusability).
+- URL patterns in `urls.py` map incoming URLs to specific view functions, with the ability to include URL configurations from individual apps.
+- Django Models simplify database interaction through an Object-Relational Mapper (ORM), defining database tables and fields as Python classes. Changes to models require running `makemigrations` and `migrate` commands to update the database schema.
 
 ---
