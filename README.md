@@ -64,11 +64,11 @@ set GEMINI_API_KEY=your_api_key_here
     [https://basecamp.com/shapeup/0.3-chapter-01](https://basecamp.com/shapeup/0.3-chapter-01)
     [https://paulgraham.com/ds.html](https://paulgraham.com/ds.html)
     ```
-2. **Run the script:** ```powershell
+2. **Run the script:**
+3. ```powershell
     python main.py
     ```
-3. **Export to Notion:** Once the script finishes, open the newly generated `my_digests.md` file. Select all (Ctrl+A), Copy (Ctrl+C), and paste directly into a blank Notion page to see it instantly format.
-
+4. **Export to Notion:** Once the script finishes, open the newly generated `my_digests.md` file. Select all (Ctrl+A), Copy (Ctrl+C), and paste directly into a blank Notion page to see it instantly format.
 ## 📝 The AI Prompt
 This project uses a highly constrained system prompt wrapped in `<selection>` tags to ensure the AI strictly summarizes the extracted article and ignores hallucinations, filler text, or conversational intros. 
 ```
